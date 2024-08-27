@@ -1,0 +1,16 @@
+tap "borkdude/brew"
+tap "clojure/tools"
+tap "go-task/tap"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+
+brew "editorconfig"
+brew "ripgrep"
+
+brew "borkdude/brew/clj-kondo"
+brew "clojure/tools/clojure"
+brew "go-task/tap/go-task"
+
+cask "temurin17"

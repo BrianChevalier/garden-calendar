@@ -1,0 +1,32 @@
+{
+ :plant/plants
+ [{:plant/name            "Sweet Alyssum"
+   :plant/scientific-name "Lobularia maritima"
+   :plant/type            :flower
+   :plant/sow-outdoors
+   [[[:jan 1] [:mar 15]]
+    [[:oct 1] [:dec 15]]]}
+  {:plant/name            "Sweet Peas"
+   :plant/scientific-name "Lathyrus odoratus"
+   :plant/type            :flower
+   :plant/sow-outdoors
+   [[[:jan 1] [:feb 15]]
+    [[:oct 1] [:dec 15]]]}
+  {:plant/name            "Sweet Potatoes"
+   :plant/scientific-name "Ipomoea batatas"
+   :plant/type            :vegetable
+   :plant/sow-outdoors
+   [[[:mar 1] [:jun 15]]]
+   :plant/sow-indoors
+   [[[:jan 1] [:apr 15]]]}
+  {:plant/name            "Tomatoes"
+   :plant/scientific-name "Solanum lycopersicum"
+   :plant/type            :vegetable
+   :plant/sow-indoors
+   [[[:jan 1] [:jan 30]]
+    [[:may 1] [:jul 15]]]
+   :plant/transplant
+   [[[:feb 15] [:mar 15]]
+    [[:jul 15] [:sept 15]]]}
+  ]
+ }

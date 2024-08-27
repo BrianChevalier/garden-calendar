@@ -1,0 +1,28 @@
+{:deps
+ {:aliases [:cljs :dev]}
+ :http
+ {:port 9000}
+ :dev-http
+ {9010
+  {:root "public"}}
+ :builds
+ {:main
+  {:target     :esm
+   :output-dir "public/static/js"
+   :asset-path "/static/js"
+   :modules
+   {:main
+    {:init-fn io.brianchevalier.init/init}}
+   :devtools
+   {:preloads [preload devtools.preload]}}
+  :ci
+  {:target    :karma
+   :output-to "target/ci.js"}
+  :test
+  {:target   :browser-test
+   :test-dir "target/test"
+   :compiler-options
+   {:output-feature-set :es-next}
+   :devtools
+   {:http-port 9999
+    :http-root "target/test"}}}}

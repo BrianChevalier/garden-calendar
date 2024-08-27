@@ -1,0 +1,4 @@
+{:min-bb-version "0.6.4"
+ :paths          ["src" "resources" "dev" "test"]
+ :deps           {io.aviso/pretty {:mvn/version "1.4.4"}}
+ :tasks          {build tasks.build/build}}

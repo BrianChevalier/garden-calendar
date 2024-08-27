@@ -1,0 +1,16 @@
+# -*- mode: gitignore; -*-
+
+*~
+\#*\#
+
+.shadow-cljs/
+node_modules/
+.nrepl-port
+report.html
+
+public/static/
+.cache/
+.cpcache/
+target/
+.task/
+.calva/output-window/output.calva-repl
