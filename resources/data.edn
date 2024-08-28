@@ -4,62 +4,65 @@
    :plant/scientific-name "Lobularia maritima"
    :plant/type            :flower
    :plant/sow-outdoors
-   [[[:jan 1] [:mar 15]]
-    [[:oct 1] [:dec 30]]]}
+   [{:start [:jan 1], :end [:mar 15]}
+    {:start [:oct 1], :end [:dec 30]}]}
   {:plant/name            "Sweet Peas"
    :plant/scientific-name "Lathyrus odoratus"
    :plant/type            :flower
    :plant/sow-outdoors
-   [[[:jan 1] [:feb 15]]
-    [[:oct 1] [:dec 30]]]}
+   [{:start [:jan 1], :end [:feb 15]}
+    {:start [:oct 1], :end [:dec 30]}]}
   {:plant/name            "Sweet Potatoes"
    :plant/scientific-name "Ipomoea batatas"
    :plant/type            :vegetable
    :plant/sow-outdoors
-   [[[:mar 1] [:jun 30]]]
+   [{:start [:mar 1], :end [:jun 30]}]
    :plant/sow-indoors
-   [[[:jan 1] [:apr 30]]]}
+   [{:start [:jan 1], :end [:apr 30]}]}
   {:plant/name            "Tomatoes"
    :plant/scientific-name "Solanum lycopersicum"
    :plant/type            :vegetable
    :plant/sow-indoors
-   [[[:jan 1] [:jan 30]]
-    [[:may 1] [:jul 30]]]
+   [{:start [:jan 1], :end [:jan 30]}
+    {:start [:may 1], :end [:jul 30]}]
    :plant/transplant
-   [[[:feb 15] [:mar 30]]
-    [[:jul 15] [:sept 30]]]}
+   [{:start [:feb 15], :end [:mar 30]}
+    {:start [:jul 15], :end [:sept 30]}]}
   {:plant/name "Borage"
    :plant/scientific-name "Borago officinalis"
    :plant/type :flower
    :plant/sow-outdoors
-   [[[:jan 1] [:jan 15]]
-    [[:oct 1] [:dec 30]]]}
+   [{:start [:jan 1], :end [:jan 15]}
+    {:start [:oct 1], :end [:dec 30]}]}
   {:plant/name "Potatoes"
    :plant/type :vegetable
    :plant/scientific-name "Solanum tuberosum"
    :plant/sow-outdoors
-   [[[:jan 1] [:jan 30]]
-    [[:sept 1] [:dec 30]]]
+   [{:start [:jan 1], :end [:jan 30]}
+    {:start [:sept 1], :end [:dec 30]}]
    :plant/sow-indoors
-   [[[:sept 1] [:dec 30]]]}
+   [{:start [:sept 1], :end [:dec 30]}]}
   {:plant/name "Echinacea"
    :plant/type :flower
    :plant/sow-outdoors
-   [[[:oct 1] [:nov 15]]]}
+   [{:start [:oct 1], :end [:nov 15]}]}
   {:plant/name "Snapdragon"
    :plant/scientific-name "Antirrhinum majus"
    :plant/sow-outdoors
-   [[[:jan 1] [:feb 15]]
-    [[:sept 15] [:dec 30]]]}
+   [{:start [:jan 1], :end [:feb 15]}
+    {:start [:sept 15], :end [:dec 30]}]}
   {:plant/name "Garlic Chives"
    :plant/transplant
-   [[[:jan 1] [:apr 30]]
-    [[:oct 1] [:dec 30]]]}
+   [{:start [:jan 1], :end [:apr 30]}
+    {:start [:oct 1], :end [:dec 30]}]}
   {:plant/name "Celery"
    :plant/type :vegetable
    :plant/sow-indoors
-   [[[:jul 1] [:sept 30]]]
+   [{:start [:jul 1], :end [:sept 30]}]
    :plant/transplant
-   [[[:sept 15] [:nov 30]]]}
+   [{:start [:sept 15], :end [:nov 30]}]}
+  {:plant/name "Comfrey"
+   :plant/transplant
+   [{:start [:jan 1], :end [:jan 30]}]}
   ]
  }

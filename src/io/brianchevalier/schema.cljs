@@ -5,7 +5,10 @@
 (spec/def ::month #{:jan :feb :mar :apr :may :jun :jul :aug :sept :oct :nov :dec})
 (spec/def ::day #{1 15 30})
 (spec/def ::time (spec/tuple ::month ::day))
-(spec/def ::period (spec/tuple ::time ::time))
+(spec/def ::start ::time)
+(spec/def ::end ::time)
+
+(spec/def ::period (spec/keys :req-un [::start ::end]))
 (spec/def ::periods (spec/coll-of ::period))
 
 (spec/def :plant/name string?)

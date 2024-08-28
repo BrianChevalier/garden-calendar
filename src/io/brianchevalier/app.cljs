@@ -44,7 +44,7 @@
 (defui periods
   [{:keys [row periods classes]}]
   ($ :<>
-    (map-indexed (fn [i [start end]]
+    (map-indexed (fn [i {:keys [start end]}]
                    ($ :div
                      {:key   i
                       :class (str classes " opacity-70 h-5 rounded-md row-start-" row " col-start-" (->col start) " col-end-" (->col end))}))
