@@ -5,7 +5,7 @@
    [uix.dom]))
 
 (defonce root
-  (let [container (js/document.getElementById "brianchevalier")]
+  (let [container (js/document.getElementById "app")]
     (uix.dom/create-root container)))
 
 (defn start
