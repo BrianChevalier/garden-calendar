@@ -1,5 +1,5 @@
 (ns tasks.tools
-  (:require 
+  (:require
    [babashka.process :as p]
    [clojure.string :as str]
    [io.aviso.ansi :as a])
@@ -22,9 +22,9 @@
      " "
      (a/bold-yellow
       (str
-       (when (> h 0)
+       (when (pos? h)
          (str h " hours, "))
-       (when (> m 0)
+       (when (pos? m)
          (str m " minutes, "))
        s "." ms " seconds")))))
 

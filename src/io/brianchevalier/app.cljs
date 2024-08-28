@@ -1,17 +1,17 @@
 (ns io.brianchevalier.app
   (:require
-   ["react" :as react]
    [clojure.edn :as edn]
    [clojure.spec.alpha :as spec]
    [clojure.string :as str]
    [io.brianchevalier.schema]
+   [oops.core :as oops]
    [shadow.resource :as shadow.resource]
-   [uix.core :refer [defui $]]))
+   [uix.core :as uix :refer [defui $]]))
 
 (defn get-data []
   (let [data (edn/read-string (shadow.resource/inline "../../../resources/data.edn"))]
     (when-not (spec/valid? :plant/db data)
-      (throw (js/Error. "Schema error")))
+      (throw (ex-info "Schema error" {:data data})))
     data))
 
 (def months
@@ -44,11 +44,11 @@
 (defui periods
   [{:keys [row periods classes]}]
   ($ :<>
-     (map-indexed (fn [i [start end]]
-                    ($ :div
-                       {:key   i
-                        :class (str classes " opacity-70 h-5 rounded-md row-start-" row " col-start-" (->col start) " col-end-" (->col end))}))
-                  periods)))
+    (map-indexed (fn [i [start end]]
+                   ($ :div
+                     {:key   i
+                      :class (str classes " opacity-70 h-5 rounded-md row-start-" row " col-start-" (->col start) " col-end-" (->col end))}))
+                 periods)))
 
 (def k->classes
   {:plant/sow-indoors  "bg-blue-500"
@@ -60,16 +60,16 @@
   (let [row  (inc (inc i))
         name (:plant/name plant)]
     ($ :<>
-       ($ :div {:class (str "col-start-1 row-start-" row)}
-          ($ :div.flex.flex-col
-             name
-             ($ :i.text-stone-400
-                (:plant/scientific-name plant))))
-       (for [k (keys k->classes)]
-         ($ periods {:key     k
-                     :row     row
-                     :classes (k->classes k)
-                     :periods (get plant k)})))))
+      ($ :div {:class (str "col-start-1 row-start-" row)}
+        ($ :div.flex.flex-col
+          name
+          ($ :i.text-stone-400
+            (:plant/scientific-name plant))))
+      (for [k (keys k->classes)]
+        ($ periods {:key     k
+                    :row     row
+                    :classes (k->classes k)
+                    :periods (get plant k)})))))
 
 (defui table-rows [{:keys [plants]}]
   (map-indexed (fn [i p]
@@ -80,13 +80,13 @@
 
 (defui table-header []
   ($ :<>
-     (map-indexed (fn [i month]
-                    ($ :div.relative
-                       {:key   i
-                        :class (str "text-center col-span-2 row-start-1 col-start-" (inc (inc (* 2 i))))}
-                       ($ :div
-                          (str/capitalize (name month)))))
-                  months)))
+    (map-indexed (fn [i month]
+                   ($ :div.relative
+                     {:key   i
+                      :class (str "text-center col-span-2 row-start-1 col-start-" (inc (inc (* 2 i))))}
+                     ($ :div
+                       (str/capitalize (name month)))))
+                 months)))
 
 (defui search
   [{:keys [value on-change]}]
@@ -94,7 +94,7 @@
              :placeholder "Search..."
              :class       "text-stone-200 rounded-md p-1 bg-slate-600"
              :value       value
-             :on-change   (fn [e] (-> e .-target .-value on-change))}))
+             :on-change   (fn [e] (on-change (oops/oget e [:target :value])))}))
 
 (defn query
   [{plants :plant/plants}
@@ -107,16 +107,16 @@
                                       (str/lower-case search)))
                      plants))))
 
-(defui page-header 
+(defui page-header
   []
   ($ :div.flex.flex-col.h-20.bg-slate-800
     ($ :div.text-gray-300.font-bold.text-xl.text-center.my-auto.mx-auto
-     "Sonoran Desert Gardening")))
+      "Sonoran Desert Gardening")))
 
 (defui gridlines []
   ($ :<>
     (for [i (range 24)]
-      ($ :div 
+      ($ :div
         {:key i
          :class (str "bg-slate-600 rounded w-0.5 row-start-2 row-end-12 col-start-" (inc (inc i)))}))))
 
@@ -128,21 +128,21 @@
               2 30}
              (quot (.getDate now) 15))]
     ($ :div
-     {:class (str "bg-red-900 rounded w-2 row-start-2 row-end-12 col-start-" (->col [month day]))})))
+      {:class (str "bg-red-900 rounded w-2 row-start-2 row-end-12 col-start-" (->col [month day]))})))
 
 (defui app
   []
   (let [db                (get-data)
-        [value on-change] (react/useState {:search ""})
+        [value on-change] (uix/use-state {:search ""})
         plants            (query db value)]
     ($ :div.bg-slate-700.text-stone-100.h-screen
       ($ page-header)
-       ($ :div.flex.flex-col.gap-10.p-5
-          ($ search {:value     (:search value)
-                     :on-change (fn [v] (on-change (assoc value :search v)))})
-          ($ :div.overflow-scroll
-           ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
-             ($ gridlines)
-             ($ current-day)
-             ($ table-header)
-             ($ table-rows {:plants plants})))))))
+      ($ :div.flex.flex-col.gap-10.p-5
+        ($ search {:value     (:search value)
+                   :on-change (fn [v] (on-change (assoc value :search v)))})
+        ($ :div.overflow-scroll
+          ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
+            ($ gridlines)
+            ($ current-day)
+            ($ table-header)
+            ($ table-rows {:plants plants})))))))
