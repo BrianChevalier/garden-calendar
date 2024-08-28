@@ -27,6 +27,9 @@ module.exports = {
     },
     theme: {
         extend: {
+            minWidth: {
+                '160': '40rem'
+            },
             gridTemplateColumns: {
                 '25': '8fr repeat(24, minmax(0, 1fr))'
             },

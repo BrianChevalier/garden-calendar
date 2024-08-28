@@ -47,7 +47,7 @@
      (map-indexed (fn [i [start end]]
                     ($ :div
                        {:key   i
-                        :class (str classes " h-5 rounded-md row-start-" row " col-start-" (->col start) " col-end-" (->col end))}))
+                        :class (str classes " opacity-70 h-5 rounded-md row-start-" row " col-start-" (->col start) " col-end-" (->col end))}))
                   periods)))
 
 (def k->classes
@@ -69,8 +69,7 @@
          ($ periods {:key     k
                      :row     row
                      :classes (k->classes k)
-                     :periods (get plant k)}))
-       )))
+                     :periods (get plant k)})))))
 
 (defui table-rows [{:keys [plants]}]
   (map-indexed (fn [i p]
@@ -81,8 +80,6 @@
 
 (defui table-header []
   ($ :<>
-     ($ :div {:class "col-start-1 row-start-1"}
-        "Plant")
      (map-indexed (fn [i month]
                     ($ :div.relative
                        {:key   i
@@ -95,7 +92,7 @@
   [{:keys [value on-change]}]
   ($ :input {:type        :text
              :placeholder "Search..."
-             :class       "text-stone-500 rounded-md p-2"
+             :class       "text-stone-200 rounded-md p-1 bg-slate-600"
              :value       value
              :on-change   (fn [e] (-> e .-target .-value on-change))}))
 
@@ -110,15 +107,23 @@
                                       (str/lower-case search)))
                      plants))))
 
+(defui page-header 
+  []
+  ($ :div.flex.flex-col.h-20.bg-slate-800
+    ($ :div.text-gray-300.font-bold.text-xl.text-center.my-auto.mx-auto
+     "Sonoran Desert Gardening")))
+
 (defui app
   []
   (let [db                (get-data)
         [value on-change] (react/useState {:search ""})
         plants            (query db value)]
-    ($ :div.bg-slate-500.text-stone-100.p-10.h-screen
-       ($ :div.flex.flex-col.gap-10
+    ($ :div.bg-slate-700.text-stone-100.h-screen
+      ($ page-header)
+       ($ :div.flex.flex-col.gap-10.p-5
           ($ search {:value     (:search value)
                      :on-change (fn [v] (on-change (assoc value :search v)))})
-          ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5
+          ($ :div.overflow-scroll
+           ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
              ($ table-header)
-             ($ table-rows {:plants plants}))))))
+             ($ table-rows {:plants plants})))))))
