@@ -5,28 +5,33 @@
    :plant/type            :flower
    :plant/sow-outdoors
    [[[:jan 1] [:mar 15]]
-    [[:oct 1] [:dec 15]]]}
+    [[:oct 1] [:dec 30]]]}
   {:plant/name            "Sweet Peas"
    :plant/scientific-name "Lathyrus odoratus"
    :plant/type            :flower
    :plant/sow-outdoors
    [[[:jan 1] [:feb 15]]
-    [[:oct 1] [:dec 15]]]}
+    [[:oct 1] [:dec 30]]]}
   {:plant/name            "Sweet Potatoes"
    :plant/scientific-name "Ipomoea batatas"
    :plant/type            :vegetable
    :plant/sow-outdoors
-   [[[:mar 1] [:jun 15]]]
+   [[[:mar 1] [:jun 30]]]
    :plant/sow-indoors
-   [[[:jan 1] [:apr 15]]]}
+   [[[:jan 1] [:apr 30]]]}
   {:plant/name            "Tomatoes"
    :plant/scientific-name "Solanum lycopersicum"
    :plant/type            :vegetable
    :plant/sow-indoors
    [[[:jan 1] [:jan 30]]
-    [[:may 1] [:jul 15]]]
+    [[:may 1] [:jul 30]]]
    :plant/transplant
-   [[[:feb 15] [:mar 15]]
-    [[:jul 15] [:sept 15]]]}
+   [[[:feb 15] [:mar 30]]
+    [[:jul 15] [:sept 30]]]}
+  {:plant/name "Borage"
+   :plant/type :flower
+   :plant/sow-outdoors
+   [[[:jan 1] [:jan 15]]
+    [[:oct 1] [:dec 30]]]}
   ]
  }

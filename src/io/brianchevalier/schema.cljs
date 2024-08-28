@@ -3,7 +3,7 @@
    [clojure.spec.alpha :as spec]))
 
 (spec/def ::month #{:jan :feb :mar :apr :may :jun :jul :aug :sept :oct :nov :dec})
-(spec/def ::day #{1 15})
+(spec/def ::day #{1 15 30})
 (spec/def ::time (spec/tuple ::month ::day))
 (spec/def ::period (spec/tuple ::time ::time))
 (spec/def ::periods (spec/coll-of ::period))
