@@ -113,6 +113,23 @@
     ($ :div.text-gray-300.font-bold.text-xl.text-center.my-auto.mx-auto
      "Sonoran Desert Gardening")))
 
+(defui gridlines []
+  ($ :<>
+    (for [i (range 24)]
+      ($ :div 
+        {:key i
+         :class (str "bg-slate-600 rounded w-0.5 row-start-2 row-end-12 col-start-" (inc (inc i)))}))))
+
+(defui current-day []
+  (let [now (js/Date.)
+        month (get months (.getMonth now))
+        day ({0 1
+              1 15
+              2 30}
+             (quot (.getDate now) 15))]
+    ($ :div
+     {:class (str "bg-red-900 rounded w-2 row-start-2 row-end-12 col-start-" (->col [month day]))})))
+
 (defui app
   []
   (let [db                (get-data)
@@ -125,5 +142,7 @@
                      :on-change (fn [v] (on-change (assoc value :search v)))})
           ($ :div.overflow-scroll
            ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
+             ($ gridlines)
+             ($ current-day)
              ($ table-header)
              ($ table-rows {:plants plants})))))))
