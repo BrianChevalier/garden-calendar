@@ -93,7 +93,8 @@
   "Draw a vertical line on the calendar"
   [{:keys [color date width]
     :or {color :bg-slate-600
-         width :w-0.5}}]
+         width :w-0.5
+         }}]
   ($ components/div
     {:classes [color
                :rounded
