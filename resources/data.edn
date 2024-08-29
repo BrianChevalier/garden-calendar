@@ -63,6 +63,29 @@
    [{:start [:sept 15], :end [:nov 30]}]}
   {:plant/name "Comfrey"
    :plant/transplant
-   [{:start [:jan 1], :end [:jan 30]}]}
+   [{:start [:jan 1], :end [:jan 30]}
+    {:start [:oct 1], :end [:dec 30]}]
+   :plant/sow-outdoors
+   [{:start [:jan 1], :end [:jan 30]}
+    {:start [:oct 1], :end [:dec 30]}]}
+ {:plant/name "Radish"
+  :plant/type :vegetable
+  :plant/sow-outdoors
+  [{:start [:jan 1], :end [:mar 15]}
+  {:start [:sept 15], :end [:dec 30]}]} 
+  {:plant/name "Ginger"
+   :plant/type :herb
+   :plant/sow-indoors
+   [{:start [:jan 1], :end [:feb 30]}]
+   :plant/sow-outdoors
+   [{:start [:mar 1], :end [:mar 30]}]}
+  {:plant/name "Buckwheat"
+   :plant/sow-outdoors
+   [{:start [:mar 1], :end [:oct 30]}]}
+ {:plant/name "Brussel Sprouts"
+  :plant/sow-indoors
+  [{:start [:jul 1], :end [:sept 30]}]
+  :plant/transplant
+  [{:start [:sept 15], :end [:nov 30]}]}
   ]
  }
