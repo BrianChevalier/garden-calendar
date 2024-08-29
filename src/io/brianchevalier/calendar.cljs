@@ -48,9 +48,9 @@
                  periods)))
 
 (def k->classes
-  {:plant/sow-indoors  [:bg-blue-500]
-   :plant/sow-outdoors [:bg-green-500 :mt-3]
-   :plant/transplant   [:bg-orange-500 :mt-6]})
+  {:plant/sow-indoors  [:bg-blue-500 ]
+   :plant/sow-outdoors [:bg-green-500 :mt-3 ]
+   :plant/transplant   [:bg-orange-500 :mt-6 ]})
 
 (defui table-row
   [{:keys [i plant]}]
@@ -93,8 +93,7 @@
   "Draw a vertical line on the calendar"
   [{:keys [color date width]
     :or {color :bg-slate-600
-         width :w-0.5
-         }}]
+         width :w-0.5 }}]
   ($ components/div
     {:classes [color
                :rounded
@@ -111,7 +110,7 @@
           day   [0 15]]
       ($ vline {:key   [month day]
                 :date  [month day]
-                :color :bg-slate-600}))))
+                :color :bg-slate-600 }))))
 
 (defui current-day
   "Draw 'today' on the calendar"
