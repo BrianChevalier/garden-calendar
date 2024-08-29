@@ -17,14 +17,19 @@
 
 (defn query
   [{plants :plant/plants}
-   {:keys [search]}]
-  (sort-by :plant/name
-           (if (str/blank? search)
-             plants
-             (filter (fn [{name :plant/name}]
-                       (str/includes? (str/lower-case name)
-                                      (str/lower-case search)))
-                     plants))))
+   {:keys [search plant-type]}]
+  (cond->> plants
+
+    (not (str/blank? search))
+    (filter (fn [{name :plant/name}]
+              (str/includes? (str/lower-case name)
+                             (str/lower-case search))))
+
+    (seq plant-type)
+    (filter (fn [{type :plant/type}]
+              (contains? plant-type type)))
+
+    :always (sort-by :plant/name)))
 
 (defui page-header
   []
@@ -35,11 +40,15 @@
 (defui app
   []
   (let [db                (get-data)
-        [value on-change] (uix/use-state {:search ""})
+        [value on-change] (uix/use-state {:search ""
+                                          :plant-type #{}})
         plants            (query db value)]
     ($ :div.bg-slate-700.text-stone-100.h-screen
       ($ page-header)
       ($ :div.flex.flex-col.gap-10.p-5
-        ($ components/search {:value     (:search value)
-                              :on-change (fn [v] (on-change (assoc value :search v)))})
+        ($ :div.flex.flex-col.md:flex-row.gap-5
+          ($ components/search {:value     (:search value)
+                               :on-change (fn [v] (on-change (assoc value :search v)))})
+        ($ components/plant-type {:value (:plant-type value)
+                                  :on-change (fn [v] (on-change (assoc value :plant-type v)))}))
         ($ calendar/calendar {:plants plants})))))
