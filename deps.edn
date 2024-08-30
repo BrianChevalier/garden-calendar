@@ -17,5 +17,7 @@
   :dev
   {:extra-paths ["dev"]
    :extra-deps
-   {binaryage/devtools
+   {djblue/portal
+    {:mvn/version "0.57.3"}
+    binaryage/devtools
     {:mvn/version "1.0.7"}}}}}
