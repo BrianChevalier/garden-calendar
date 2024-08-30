@@ -91,7 +91,7 @@
 
 (defui vline
   "Draw a vertical line on the calendar"
-  [{:keys [color date width]
+  [{:keys [color date width n-rows]
     :or {color :bg-slate-600
          width :w-0.5 }}]
   ($ components/div
@@ -99,22 +99,23 @@
                :rounded
                width
                :row-start-2
-               :row-end-26
+               (str "row-end-" (inc (inc n-rows)))
                (str "col-start-" (->col date))]}))
 
 (defui gridlines
   "Draw gridlines on the calendar"
-  []
+  [{:keys [n-rows]}]
   ($ :<>
     (for [month months
           day   [0 15]]
       ($ vline {:key   [month day]
+                :n-rows n-rows
                 :date  [month day]
                 :color :bg-slate-600 }))))
 
 (defui current-day
   "Draw 'today' on the calendar"
-  []
+  [{:keys [n-rows]}]
   (let [now (js/Date.)
         month (get months (.getMonth now))
         day ({0 1
@@ -122,15 +123,17 @@
               2 30}
              (quot (.getDate now) 15))]
     ($ vline
-      {:color :bg-red-900
+      {:n-rows n-rows
+       :color :bg-red-900
        :width :w-2
        :date [month day]})))
 
 (defui calendar
   [{:keys [plants]}]
-  ($ :div.overflow-scroll
-    ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
-      ($ gridlines)
-      ($ current-day)
-      ($ table-header)
-      ($ table-rows {:plants plants}))))
+  (let [n-rows (count plants)]
+    ($ :div.overflow-scroll
+     ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
+       ($ gridlines {:n-rows n-rows})
+       ($ current-day {:n-rows n-rows})
+       ($ table-header)
+       ($ table-rows {:plants plants})))))

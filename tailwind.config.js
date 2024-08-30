@@ -2,6 +2,18 @@
 
 const { scanClojure } = require("@multiplyco/tailwind-clj");
 
+const gridRowMap = {};
+
+for (i = 13; i < 100; i++) {
+     gridRowMap[i] = i.toString();
+}
+
+const gridColMap = {};
+
+for (i = 13; i < 30; i++) {
+     gridColMap[i] = i.toString();
+}
+
 module.exports = {
     content: {
         files: ["./src/**/*.{clj,cljs,cljc}"],
@@ -33,70 +45,10 @@ module.exports = {
             gridTemplateColumns: {
                 '25': '8fr repeat(24, minmax(0, 1fr))'
             },
-            gridColumnStart: {
-                '13': '13',
-                '14': '14',
-                '15': '15',
-                '16': '16',
-                '17': '17',
-                '18': '18',
-                '19': '19',
-                '20': '20',
-                '21': '21',
-                '22': '22',
-                '23': '23',
-                '24': '24',
-                '25': '25',
-                '26': '26'
-            },
-            gridColumnEnd: {
-                '13': '13',
-                '14': '14',
-                '15': '15',
-                '16': '16',
-                '17': '17',
-                '18': '18',
-                '19': '19',
-                '20': '20',
-                '21': '21',
-                '22': '22',
-                '23': '23',
-                '24': '24',
-                '25': '25',
-                '26': '26'
-            },
-            gridRowStart: {
-                '13': '13',
-                '14': '14',
-                '15': '15',
-                '16': '16',
-                '17': '17',
-                '18': '18',
-                '19': '19',
-                '20': '20',
-                '21': '21',
-                '22': '22',
-                '23': '23',
-                '24': '24',
-                '25': '25',
-                '26': '26'
-            },
-            gridRowEnd: {
-                '13': '13',
-                '14': '14',
-                '15': '15',
-                '16': '16',
-                '17': '17',
-                '18': '18',
-                '19': '19',
-                '20': '20',
-                '21': '21',
-                '22': '22',
-                '23': '23',
-                '24': '24',
-                '25': '25',
-                '26': '26'
-            }
+            gridColumnStart: gridColMap,
+            gridColumnEnd: gridColMap,
+            gridRowStart: gridRowMap,
+            gridRowEnd: gridRowMap
         },
     },
     plugins: [],
