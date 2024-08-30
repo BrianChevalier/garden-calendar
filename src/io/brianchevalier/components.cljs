@@ -46,23 +46,36 @@
       ($ :span
         (str/capitalize (name id))))))
 
-(defui plant-type
-  [{:keys [value on-change]}]
+(defui toggle-button-group
+  [{:keys [options value on-change]}]
   ($ div
-    {:classes [:flex 
+    {:classes [:flex
                :overflow-hidden
                :flex-row
                :rounded-md
                :bg-slate-600
                :justify-around
-               :items-center
-               ]}
-    (for [type [:flower :herb :vegetable :tree]]
+               :items-center]}
+    (for [option options]
       ($ toggle-button
-        {:id type
-         :key type
-         :checked? (contains? value type)
+        {:id option
+         :key option
+         :checked? (contains? value option)
          :on-change (fn [v]
                       (on-change (if (true? v)
-                                   (conj value type)
-                                   (disj value type))))}))))
+                                   (conj value option)
+                                   (disj value option))))}))))
+
+(defui plant-type
+  [{:keys [value on-change]}]
+  ($ toggle-button-group
+    {:value value
+     :on-change on-change
+     :options [:flower :herb :vegetable :tree]}))
+
+(defui time-span
+  [{:keys [value on-change]}]
+  ($ toggle-button-group
+    {:value value
+     :on-change on-change
+     :options [:current]}))

@@ -2,35 +2,13 @@
   (:require
    [clojure.string :as str]
    [io.brianchevalier.components :as components]
+   [io.brianchevalier.time :as time]
    [uix.core :as uix :refer [defui $]]))
-
-(def months
-  [:jan :feb :mar :apr :may :jun :jul :aug :sept :oct :nov :dec])
-
-(def month->int
-  {:jan  0
-   :feb  1
-   :mar  2
-   :apr  3
-   :may  4
-   :jun  5
-   :jul  6
-   :aug  7
-   :sept 8
-   :oct  9
-   :nov  10
-   :dec  11})
-
-(def day->offset
-  {0  0
-   1  0
-   15 1
-   30 2})
 
 (defn ->col
   [[month day]]
-  (+ 2 (day->offset day)
-     (* 2 (month->int month))))
+  (+ 2 (time/day->offset day)
+     (* 2 (time/month->int month))))
 
 (defui periods
   [{:keys [row periods classes]}]
@@ -87,7 +65,7 @@
                                 (str "col-start-" (inc (inc (* 2 i))))]}
                      ($ :div
                        (str/capitalize (name month)))))
-                 months)))
+                 time/months)))
 
 (defui vline
   "Draw a vertical line on the calendar"
@@ -106,7 +84,7 @@
   "Draw gridlines on the calendar"
   [{:keys [n-rows]}]
   ($ :<>
-    (for [month months
+    (for [month time/months
           day   [0 15]]
       ($ vline {:key   [month day]
                 :n-rows n-rows
@@ -116,12 +94,7 @@
 (defui current-day
   "Draw 'today' on the calendar"
   [{:keys [n-rows]}]
-  (let [now (js/Date.)
-        month (get months (.getMonth now))
-        day ({0 1
-              1 15
-              2 30}
-             (quot (.getDate now) 15))]
+  (let [[month day] (time/current-date)]
     ($ vline
       {:n-rows n-rows
        :color :bg-red-900
