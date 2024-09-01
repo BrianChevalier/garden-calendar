@@ -101,12 +101,72 @@
        :width :w-2
        :date [month day]})))
 
+(defui frost-lines
+  [{:keys [n-rows]}]
+  ($ :<>
+    ($ vline {:color :bg-blue-950
+              :width :w-2
+              :date [:feb 30]
+              :n-rows n-rows})
+    ($ vline {:color :bg-blue-950
+              :width :w-2
+              :date [:nov 30]
+              :n-rows n-rows})))
+
+(defui current-cell-div
+  [{:keys [current-cell plants]}]
+  (when current-cell
+    (let [[row col] current-cell
+          [lower _upper] (:plant/harvest-days (nth plants (dec (dec row))))]
+      (when lower
+        (let [n-cells (quot lower 14)
+              s (drop-while #(< % col) (cycle (range 2 26)))]
+          ($ :<>
+            (for [col (take n-cells s)]
+              ($ components/div
+                {:key col
+                 :classes [(str "row-start-" row)
+                           (str "col-start-" col)
+                           :opacity-45
+                           :z-10
+                           :bg-slate-400 ]}))))))))
+
+(defui dummy-div
+  [{:keys [row col on-cell-change]}]
+  ($ components/div
+    {:classes        [:z-20
+                      (str "row-start-" row)
+                      (str "col-start-" col)]
+     :onPointerEnter (fn [_e] (on-cell-change [row  col]))}))
+
+(defui cells
+  [{:keys [n-rows on-cell-change]}]
+  ($ :<>
+    (for [row (range 2 (inc (inc n-rows)))
+          col (range 2 26)]
+      ($ dummy-div {:key (str [row col])
+                    :on-cell-change on-cell-change
+                    :row            row
+                    :col            col}))))
+
+(defui contextual-data
+  [{:keys [n-rows plants]}]
+  (let [[cell on-cell-change] (uix/use-state nil)]
+    ($ :<>
+      ($ current-cell-div {:current-cell cell
+                           :plants plants})
+      ($ cells {:n-rows         n-rows
+                :on-cell-change on-cell-change}))))
+
 (defui calendar
   [{:keys [plants]}]
   (let [n-rows (count plants)]
     ($ :div.overflow-scroll
-     ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
-       ($ gridlines {:n-rows n-rows})
-       ($ current-day {:n-rows n-rows})
-       ($ table-header)
-       ($ table-rows {:plants plants})))))
+      ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
+        ($ frost-lines {:n-rows n-rows})
+        ($ contextual-data {:n-rows n-rows
+                            :plants plants})
+        ($ gridlines {:n-rows n-rows})
+        ($ current-day {:n-rows n-rows})
+        ($ table-header)
+        ($ table-rows {:plants plants})))))

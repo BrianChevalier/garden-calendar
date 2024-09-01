@@ -397,6 +397,7 @@
    {:plant/name "Tomatoes",
     :plant/scientific-name "Solanum lycopersicum"
     :plant/type :vegetable,
+    :plant/harvest-days [60 100]
     :plant/sow-indoors
     ({:start [:jan 1], :end [:jan 30]}
      {:start [:may 1], :end [:jul 30]}

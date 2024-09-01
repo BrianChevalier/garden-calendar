@@ -55,3 +55,8 @@
 (defn in-any-periods?
   [period periods]
   (some (partial in-period? period) periods))
+
+(defn date->col
+  [month day]
+  (+ (day->offset day)
+     (inc (inc (* 2 (month->int month))))))

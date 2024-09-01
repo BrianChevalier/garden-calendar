@@ -13,7 +13,7 @@
 (defn get-data []
   (let [data (edn/read-string (shadow.resource/inline "../../../resources/data.edn"))]
     (when-not (spec/valid? :plant/db data)
-      (throw (ex-info "Schema error" {:data data})))
+      (throw (ex-info "Schema error" {:data (spec/explain-data :plant/db data)})))
     data))
 
 (defn current-plant?
