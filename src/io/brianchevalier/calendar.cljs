@@ -30,27 +30,36 @@
    :plant/sow-outdoors [:bg-green-500 :mt-3 ]
    :plant/transplant   [:bg-orange-500 :mt-6 ]})
 
+(defn scientific-name [plant]
+  (or (:plant/scientific-name plant)
+      (str/join " " 
+                [(some-> plant :plant/genus name)
+                 (some-> plant :plant/species name)])))
+
 (defui table-row
-  [{:keys [i plant]}]
+  [{:keys [i plant genuses]}]
   (let [row  (inc (inc i))
         name (:plant/name plant)]
     ($ :<>
       ($ :div {:class (str "col-start-1 row-start-" row)}
+        (when (contains? genuses (:plant/genus plant))
+          "***")
         ($ :div.flex.flex-col
           name
           ($ :i.text-stone-400
-            (:plant/scientific-name plant))))
+            (scientific-name plant))))
       (for [k (keys k->classes)]
         ($ periods {:key     k
                     :row     row
                     :classes (k->classes k)
                     :periods (get plant k)})))))
 
-(defui table-rows [{:keys [plants]}]
+(defui table-rows [{:keys [plants genuses]}]
   (map-indexed (fn [i p]
                  ($ table-row {:i     i
                                :key   i
-                               :plant p}))
+                               :plant p
+                               :genuses genuses}))
                plants))
 
 (defui table-header []
@@ -115,7 +124,7 @@
 
 (defui current-cell-div
   [{:keys [current-cell plants]}]
-  (when current-cell
+  #_(when current-cell
     (let [[row col] current-cell
           [lower _upper] (:plant/harvest-days (nth plants (dec (dec row))))]
       (when lower
@@ -159,7 +168,7 @@
                 :on-cell-change on-cell-change}))))
 
 (defui calendar
-  [{:keys [plants]}]
+  [{:keys [plants genuses]}]
   (let [n-rows (count plants)]
     ($ :div.overflow-scroll
       ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
@@ -169,4 +178,4 @@
         ($ gridlines {:n-rows n-rows})
         ($ current-day {:n-rows n-rows})
         ($ table-header)
-        ($ table-rows {:plants plants})))))
+        ($ table-rows {:plants plants :genuses genuses})))))

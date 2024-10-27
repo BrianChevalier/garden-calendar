@@ -1,6 +1,7 @@
 (ns io.brianchevalier.app
   (:require
    [clojure.edn :as edn]
+   [clojure.set :as set]
    [clojure.spec.alpha :as spec]
    [clojure.string :as str]
    [io.brianchevalier.schema]
@@ -56,21 +57,51 @@
     ($ :div.text-gray-300.font-bold.text-xl.text-center.my-auto.mx-auto
       "Sonoran Desert Gardening")))
 
+(defui resources []
+  ($ :div.flex.flex-row.gap-5.mx-auto.justify-center
+    ($ :a {:href   "https://extension.arizona.edu/sites/default/files/2024-08/az1005-2018.pdf"
+           :target "_blank"}
+      "Vegetable Calendar")
+    ($ :a {:href   "https://extension.arizona.edu/sites/default/files/2024-08/az1100a.pdf"
+           :target "_blank"}
+      "Flower Calendar")
+    ($ :a {:href   "https://extension.arizona.edu/sites/default/files/2024-08/az1269.pdf"
+           :target "_blank"}
+      "Tree Calendar")))
+
+(defui navbar 
+  [{:keys [value on-change]}]
+  ($ :div.flex.flex-row.text-gray-300.font-bold.text-sm.text-center.mx-auto.p-3.justify-center
+    ($ components/toggle-button-group {:value value
+                                       :on-change (fn [v] (on-change (set/difference v value)))
+                                       :options [:calendar :resources]})))
+
 (defui app
   []
   (let [db                (get-data)
         [value on-change] (uix/use-state {:search ""
                                           :plant-type #{}
                                           :times #{:current}})
+        [page on-navigate] (uix/use-state #{:calendar})
         plants            (query db value)]
     ($ :div.bg-slate-700.text-stone-100.h-screen
       ($ page-header)
-      ($ :div.flex.flex-col.gap-10.p-5
-        ($ :div.flex.flex-col.md:flex-row.gap-5
-          ($ components/search {:value     (:search value)
-                               :on-change (fn [v] (on-change (assoc value :search v)))})
-          ($ components/plant-type {:value     (:plant-type value)
-                                    :on-change (fn [v] (on-change (assoc value :plant-type v)))})
-          ($ components/time-span {:value (:times value)
-                                   :on-change (fn [v] (on-change (assoc value :times v)))}))
-        ($ calendar/calendar {:plants plants})))))
+      ($ navbar {:value page :on-change on-navigate})
+      (cond 
+        (contains? page :resources)
+        ($ resources)
+
+        :else
+        ($ :div.flex.flex-col.gap-10.p-5
+          
+          (contains? page :calendar)
+          ($ :div.flex.flex-col.md:flex-row.gap-5
+            ($ components/search {:value     (:search value)
+                                  :on-change (fn [v] (on-change (assoc value :search v)))})
+            ($ components/plant-type {:value     (:plant-type value)
+                                      :on-change (fn [v] (on-change (assoc value :plant-type v)))})
+            ($ components/time-span {:value     (:times value)
+                                     :on-change (fn [v] (on-change (assoc value :times v)))}))
+          ($ calendar/calendar {:plants  plants
+                                :genuses (:genuses db)}))
+        ))))

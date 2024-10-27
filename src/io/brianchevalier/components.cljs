@@ -32,9 +32,9 @@
                  :text-gray-300
                  :bg-slate-600
                  :p-3
-                 :grow-1]}
+                 :grow-1 ]}
       {:classes [:p-3
-                 :grow-1]})
+                 :grow-1 ]})
     ($ :label.cursor-pointer
       {:for id}
       ($ :input.hidden
@@ -55,12 +55,13 @@
                :rounded-md
                :bg-slate-600
                :justify-around
-               :items-center]}
+               :items-center 
+               :w-fit ]}
     (for [option options]
       ($ toggle-button
-        {:id option
-         :key option
-         :checked? (contains? value option)
+        {:id        option
+         :key       option
+         :checked?  (contains? value option)
          :on-change (fn [v]
                       (on-change (if (true? v)
                                    (conj value option)
@@ -69,13 +70,13 @@
 (defui plant-type
   [{:keys [value on-change]}]
   ($ toggle-button-group
-    {:value value
+    {:value     value
      :on-change on-change
-     :options [:flower :herb :vegetable :tree]}))
+     :options   [:flower :herb :vegetable :tree]}))
 
 (defui time-span
   [{:keys [value on-change]}]
   ($ toggle-button-group
-    {:value value
+    {:value     value
      :on-change on-change
-     :options [:current]}))
+     :options   [:current]}))
