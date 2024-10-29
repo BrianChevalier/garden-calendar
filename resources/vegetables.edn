@@ -1,450 +1,451 @@
-[{:plant/name            "Sweet Potatoes"
-  :plant/scientific-name "Ipomoea batatas"
-  :plant/type            :vegetable
-  :plant/sow-outdoors    [{:start [:mar 1]
-                           :end   [:jun 30]}]
-  :plant/sow-indoors     [{:start [:jan 1]
-                           :end   [:apr 30]}]}
- {:plant/name            "Potatoes"
-  :plant/type            :vegetable
-  :plant/scientific-name "Solanum tuberosum"
-  :plant/sow-outdoors    [{:start [:jan 1]
-                           :end   [:jan 30]}
-                          {:start [:sept 1]
-                           :end   [:dec 30]}]
-  :plant/sow-indoors     [{:start [:sept 1]
-                           :end   [:dec 30]}]}
- {:plant/name       "Garlic Chives"
-  :plant/type       :vegetable
-  :plant/genus      :allium
-  :plant/species    :tuberosum
-  :plant/transplant [{:start [:jan 1]
-                      :end   [:apr 30]}
-                     {:start [:oct 1]
-                      :end   [:dec 30]}]}
- {:plant/name         "Chives"
-  :plant/type         :vegetable
-  :plant/genus        :allium
-  :plant/species      :schoenoprasum
-  :plant/transplant   [{:start [:jan 1]
-                        :end   [:apr 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]}]
-  :plant/sow-indoors  [{:start [:jan 1]
-                        :end   [:feb 30]}
-                       {:start [:aug 1]
-                        :end   [:dec 30]}]
-  :plant/sow-outdoors [{:start [:jan 1]
-                        :end   [:apr 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]}]}
- {:plant/name        "Cucamelon"
-  :plant/type        :vegetable
-  :plant/genus       :melothria
-  :plant/species     :scabra
-  :plant/sow-indoors [{:start [:jan 1]
-                       :end   [:mar 30]}
-                      {:start [:jun 1]
-                       :end   [:aug 30]}
-                      {:start [:dec 1]
-                       :end   [:dec 30]}]
-  :plant/transplant  [{:start [:feb 15]
+{:plant/plants
+ [{:plant/name            "Sweet Potatoes"
+   :plant/scientific-name "Ipomoea batatas"
+   :plant/type            :vegetable
+   :plant/sow-outdoors    [{:start [:mar 1]
+                            :end   [:jun 30]}]
+   :plant/sow-indoors     [{:start [:jan 1]
+                            :end   [:apr 30]}]}
+  {:plant/name            "Potatoes"
+   :plant/type            :vegetable
+   :plant/scientific-name "Solanum tuberosum"
+   :plant/sow-outdoors    [{:start [:jan 1]
+                            :end   [:jan 30]}
+                           {:start [:sept 1]
+                            :end   [:dec 30]}]
+   :plant/sow-indoors     [{:start [:sept 1]
+                            :end   [:dec 30]}]}
+  {:plant/name       "Garlic Chives"
+   :plant/type       :vegetable
+   :plant/genus      :allium
+   :plant/species    :tuberosum
+   :plant/transplant [{:start [:jan 1]
                        :end   [:apr 30]}
-                      {:start [:aug 15]
-                       :end   [:sept 30]}]}
- {:plant/name        "Celery"
-  :plant/genus       :apium
-  :plant/species     :graveolens
-  :plant/cultivar    :dulce-group
-  :plant/type        :vegetable
-  :plant/sow-indoors [{:start [:jul 1]
-                       :end   [:sept 30]}]
-  :plant/transplant  [{:start [:sept 15]
-                       :end   [:nov 30]}]}
- {:plant/name         "Comfrey"
-  :plant/transplant   [{:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:oct 1]
+                      {:start [:oct 1]
+                       :end   [:dec 30]}]}
+  {:plant/name         "Chives"
+   :plant/type         :vegetable
+   :plant/genus        :allium
+   :plant/species      :schoenoprasum
+   :plant/transplant   [{:start [:jan 1]
+                         :end   [:apr 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]}]
+   :plant/sow-indoors  [{:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:aug 1]
+                         :end   [:dec 30]}]
+   :plant/sow-outdoors [{:start [:jan 1]
+                         :end   [:apr 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]}]}
+  {:plant/name        "Cucamelon"
+   :plant/type        :vegetable
+   :plant/genus       :melothria
+   :plant/species     :scabra
+   :plant/sow-indoors [{:start [:jan 1]
+                        :end   [:mar 30]}
+                       {:start [:jun 1]
+                        :end   [:aug 30]}
+                       {:start [:dec 1]
                         :end   [:dec 30]}]
-  :plant/sow-outdoors [{:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]}]}
- {:plant/name         "Radish"
-  :plant/type         :vegetable
-  :plant/sow-outdoors [{:start [:jan 1]
-                        :end   [:mar 15]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]}]}
- {:plant/name         "Ginger"
-  :plant/type         :herb
-  :plant/sow-indoors  [{:start [:jan 1]
-                        :end   [:feb 30]}]
-  :plant/sow-outdoors [{:start [:mar 1]
-                        :end   [:mar 30]}]}
- {:plant/name         "Buckwheat"
-  :plant/sow-outdoors [{:start [:mar 1]
-                        :end   [:oct 30]}]}
- {:plant/name        "Brussel Sprouts"
-  :plant/type        :vegetable
-  :plant/sow-indoors [{:start [:jul 1]
-                       :end   [:sept 30]}]
-  :plant/transplant  [{:start [:sept 15]
-                       :end   [:nov 30]}]}
- {:plant/name         "Broccoli"
-  :plant/type         :vegetable
-  :plant/transplant   [{:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]}]
-  :plant/sow-indoors  [{:start [:aug 1]
-                        :end   [:dec 30]}]
-  :plant/sow-outdoors [{:start [:sept 15]
+   :plant/transplant  [{:start [:feb 15]
+                        :end   [:apr 30]}
+                       {:start [:aug 15]
+                        :end   [:sept 30]}]}
+  {:plant/name        "Celery"
+   :plant/genus       :apium
+   :plant/species     :graveolens
+   :plant/cultivar    :dulce-group
+   :plant/type        :vegetable
+   :plant/sow-indoors [{:start [:jul 1]
+                        :end   [:sept 30]}]
+   :plant/transplant  [{:start [:sept 15]
                         :end   [:nov 30]}]}
- {:plant/name         "Amaranth",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:mar 1]
-                        :end   [:apr 30]}
-                       {:start [:jul 1]
-                        :end   [:aug 30]})}
- {:plant/name         "Artichoke (Jerusalem)",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:feb 1]
-                        :end   [:may 30]}),
-  :plant/transplant   ({:start [:feb 1]
-                        :end   [:may 30]})}
- {:plant/name         "Artichokes (Globe)",
-  :plant/type         :vegetable
-  :plant/germination  {:temp     {:min 60
-                                  :max 80}
-                       :depth    {:min 0.25}
-                       :duration {:min 10
-                                  :max 21}
-                       :spacing  {:min 24
-                                  :max 48}}
-  :plant/photos       [{:url "https://upload.wikimedia.org/wikipedia/commons/6/6d/Artichoke_J1.jpg"}]
-  :plant/sow-indoors  ({:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:oct 1]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:feb 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]})}
- {:plant/name         "Arugula",
-  :plant/genus        :eruca
-  :plant/species      :sativa
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]})}
- {:plant/name        "Asparagus",
-  :plant/type        :vegetable,
-  :plant/sow-indoors ({:start [:aug 1]
-                       :end   [:nov 30]}),
-  :plant/transplant  ({:start [:jan 1]
-                       :end   [:jan 30]}
-                      {:start [:nov 1]
-                       :end   [:dec 30]})}
- {:plant/name         "Basil",
-  :plant/type         :herb,
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:jul 30]}),
-  :plant/sow-outdoors ({:start [:mar 1]
-                        :end   [:aug 30]}),
-  :plant/transplant   ({:start [:feb 15]
-                        :end   [:aug 30]})}
- {:plant/name         "Beans (Bush & Pole)",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:mar 15]
-                        :end   [:apr 30]}
-                       {:start [:aug 1]
-                        :end   [:sept 30]})}
- {:plant/name         "Beets",
-  :plant/genus        :beta
-  :plant/species      :vulgaris
-  :plant/family       :amaranthaceae
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:feb 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:feb 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name       "Blackberry",
-  :plant/type       :vegetable
-  :plant/genus      :rubus
-  :plant/transplant ({:start [:feb 1]
-                      :end   [:mar 30]}
-                     {:start [:oct 1]
-                      :end   [:oct 30]})}
- {:plant/name         "Bok Choy",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:feb 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name         "Carrots",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:mar 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name         "Cilantro",
-  :plant/type         :herb,
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]})}
- {:plant/name         "Corn",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:feb 15]
-                        :end   [:mar 30]}
-                       {:start [:jul 1]
-                        :end   [:aug 30]})}
- {:plant/name         "Cowpeas",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:apr 1]
-                        :end   [:aug 30]})}
- {:plant/name         "Cucumber",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:apr 30]}
-                       {:start [:jul 1]
-                        :end   [:aug 30]}),
-  :plant/sow-outdoors ({:start [:feb 15]
-                        :end   [:apr 30]}
-                       {:start [:aug 15]
-                        :end   [:sept 30]}),
-  :plant/transplant   ({:start [:feb 15]
-                        :end   [:apr 30]}
-                       {:start [:aug 15]
-                        :end   [:sept 30]})}
- {:plant/name "Cumin"
-  :plant/type :herb}
- {:plant/name         "Dill",
-  :plant/type         :herb,
-  :plant/sow-indoors  ({:start [:aug 1]
+  {:plant/name         "Comfrey"
+   :plant/transplant   [{:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]}]
+   :plant/sow-outdoors [{:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]}]}
+  {:plant/name         "Radish"
+   :plant/type         :vegetable
+   :plant/sow-outdoors [{:start [:jan 1]
+                         :end   [:mar 15]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]}]}
+  {:plant/name         "Ginger"
+   :plant/type         :herb
+   :plant/sow-indoors  [{:start [:jan 1]
+                         :end   [:feb 30]}]
+   :plant/sow-outdoors [{:start [:mar 1]
+                         :end   [:mar 30]}]}
+  {:plant/name         "Buckwheat"
+   :plant/sow-outdoors [{:start [:mar 1]
+                         :end   [:oct 30]}]}
+  {:plant/name        "Brussel Sprouts"
+   :plant/type        :vegetable
+   :plant/sow-indoors [{:start [:jul 1]
+                        :end   [:sept 30]}]
+   :plant/transplant  [{:start [:sept 15]
+                        :end   [:nov 30]}]}
+  {:plant/name         "Broccoli"
+   :plant/type         :vegetable
+   :plant/transplant   [{:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]}]
+   :plant/sow-indoors  [{:start [:aug 1]
+                         :end   [:dec 30]}]
+   :plant/sow-outdoors [{:start [:sept 15]
+                         :end   [:nov 30]}]}
+  {:plant/name         "Amaranth",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:mar 1]
+                         :end   [:apr 30]}
+                        {:start [:jul 1]
+                         :end   [:aug 30]})}
+  {:plant/name         "Artichoke (Jerusalem)",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:feb 1]
+                         :end   [:may 30]}),
+   :plant/transplant   ({:start [:feb 1]
+                         :end   [:may 30]})}
+  {:plant/name         "Artichokes (Globe)",
+   :plant/type         :vegetable
+   :plant/germination  {:temp     {:min 60
+                                   :max 80}
+                        :depth    {:min 0.25}
+                        :duration {:min 10
+                                   :max 21}
+                        :spacing  {:min 24
+                                   :max 48}}
+   :plant/photos       [{:url "https://upload.wikimedia.org/wikipedia/commons/6/6d/Artichoke_J1.jpg"}]
+   :plant/sow-indoors  ({:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:oct 1]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})}
+  {:plant/name         "Arugula",
+   :plant/genus        :eruca
+   :plant/species      :sativa
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})}
+  {:plant/name        "Asparagus",
+   :plant/type        :vegetable,
+   :plant/sow-indoors ({:start [:aug 1]
                         :end   [:nov 30]}),
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:jan 15]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:jan 15]}
-                       {:start [:oct 1]
-                        :end   [:dec 30]})}
- {:plant/name        "Eggplant",
-  :plant/type        :vegetable,
-  :plant/sow-indoors ({:start [:jan 1]
-                       :end   [:feb 30]}
-                      {:start [:may 1]
-                       :end   [:jul 30]}),
-  :plant/transplant  ({:start [:mar 1]
-                       :end   [:apr 30]}
-                      {:start [:jul 15]
-                       :end   [:sept 30]})}
- {:plant/name         "Garlic",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:oct 15]
-                        :end   [:dec 15]})}
- {:plant/name       "Grapes",
-  :plant/type       :vegetable,
-  :plant/transplant ({:start [:feb 15]
-                      :end   [:mar 30]}
-                     {:start [:oct 1]
-                      :end   [:oct 30]})}
- {:plant/name         "Green Onion",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:apr 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name         "Jicama",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:feb 30]}),
-  :plant/sow-outdoors ({:start [:mar 1]
-                        :end   [:apr 30]}),
-  :plant/transplant   ({:start [:mar 1]
-                        :end   [:apr 30]})}
- {:plant/name         "Kale",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:sept 15]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name       "Lavender",
-  :plant/type       :herb,
-  :plant/transplant ({:start [:jan 1]
-                      :end   [:apr 30]}
-                     {:start [:oct 1]
-                      :end   [:dec 30]})}
- {:plant/name       "Lemon Grass",
-  :plant/type       :herb,
-  :plant/transplant ({:start [:feb 1]
-                      :end   [:apr 30]}
-                     {:start [:oct 1]
-                      :end   [:nov 30]})}
- {:plant/name         "Lettuce",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:sept 15]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
-
- {:plant/name         "Luffa",
-  :plant/sow-indoors  ({:start [:jan 1]
-                        :end   [:apr 30]}),
-  :plant/sow-outdoors ({:start [:feb 15]
-                        :end   [:apr 30]}),
-  :plant/transplant   ({:start [:feb 15]
-                        :end   [:apr 30]})}
- {:plant/name         "Okra",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:feb 1]
-                        :end   [:may 30]}),
-  :plant/sow-outdoors ({:start [:mar 15]
-                        :end   [:may 30]}),
-  :plant/transplant   ({:start [:mar 15]
-                        :end   [:may 30]})}
- {:plant/name         "Onion (Bulb)",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:aug 1]
-                        :end   [:nov 30]}),
-  :plant/sow-outdoors ({:start [:oct 1]
-                        :end   [:nov 30]}),
-  :plant/transplant   ({:start [:jan 1]
+   :plant/transplant  ({:start [:jan 1]
                         :end   [:jan 30]}
                        {:start [:nov 1]
                         :end   [:dec 30]})}
- {:plant/name         "Peas",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name        "Peppers",
-  :plant/type        :vegetable,
-  :plant/sow-indoors ({:start [:jan 1]
-                       :end   [:feb 30]}
-                      {:start [:may 1]
-                       :end   [:jul 30]}),
-  :plant/transplant  ({:start [:feb 15]
-                       :end   [:apr 30]}
-                      {:start [:jul 15]
-                       :end   [:sept 30]})}
-
- {:plant/name         "Saffron Crocus",
-  :plant/type         :herb,
-  :plant/sow-outdoors ({:start [:sept 15]
-                        :end   [:oct 30]})}
- {:plant/name       "Sage",
-  :plant/type       :herb,
-  :plant/transplant ({:start [:feb 1]
-                      :end   [:apr 30]}
-                     {:start [:oct 1]
-                      :end   [:nov 30]})}
- {:plant/name         "Spinach",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:aug 1]
-                        :end   [:dec 30]}),
-  :plant/sow-outdoors ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]}),
-  :plant/transplant   ({:start [:jan 1]
-                        :end   [:jan 30]}
-                       {:start [:sept 15]
-                        :end   [:dec 30]})}
- {:plant/name         "Squash (Summer)",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:jan 1]
+  {:plant/name         "Basil",
+   :plant/type         :herb,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:jul 30]}),
+   :plant/sow-outdoors ({:start [:mar 1]
+                         :end   [:aug 30]}),
+   :plant/transplant   ({:start [:feb 15]
+                         :end   [:aug 30]})}
+  {:plant/name         "Beans (Bush & Pole)",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:mar 15]
+                         :end   [:apr 30]}
+                        {:start [:aug 1]
+                         :end   [:sept 30]})}
+  {:plant/name         "Beets",
+   :plant/genus        :beta
+   :plant/species      :vulgaris
+   :plant/family       :amaranthaceae
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name       "Blackberry",
+   :plant/type       :vegetable
+   :plant/genus      :rubus
+   :plant/transplant ({:start [:feb 1]
+                       :end   [:mar 30]}
+                      {:start [:oct 1]
+                       :end   [:oct 30]})}
+  {:plant/name         "Bok Choy",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name         "Carrots",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:mar 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name         "Cilantro",
+   :plant/type         :herb,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})}
+  {:plant/name         "Corn",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:feb 15]
+                         :end   [:mar 30]}
+                        {:start [:jul 1]
+                         :end   [:aug 30]})}
+  {:plant/name         "Cowpeas",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:apr 1]
+                         :end   [:aug 30]})}
+  {:plant/name         "Cucumber",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:apr 30]}
+                        {:start [:jul 1]
+                         :end   [:aug 30]}),
+   :plant/sow-outdoors ({:start [:feb 15]
+                         :end   [:apr 30]}
+                        {:start [:aug 15]
+                         :end   [:sept 30]}),
+   :plant/transplant   ({:start [:feb 15]
+                         :end   [:apr 30]}
+                        {:start [:aug 15]
+                         :end   [:sept 30]})}
+  {:plant/name "Cumin"
+   :plant/type :herb}
+  {:plant/name         "Dill",
+   :plant/type         :herb,
+   :plant/sow-indoors  ({:start [:aug 1]
+                         :end   [:nov 30]}),
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 15]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:jan 15]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})}
+  {:plant/name        "Eggplant",
+   :plant/type        :vegetable,
+   :plant/sow-indoors ({:start [:jan 1]
                         :end   [:feb 30]}
-                       {:start [:jul 1]
-                        :end   [:aug 30]}),
-  :plant/sow-outdoors ({:start [:feb 15]
-                        :end   [:mar 30]}
-                       {:start [:aug 15]
-                        :end   [:sept 30]}),
-  :plant/transplant   ({:start [:feb 15]
-                        :end   [:mar 30]}
-                       {:start [:aug 15]
-                        :end   [:sept 30]})}
- {:plant/name         "Squash (Winter)",
-  :plant/type         :vegetable,
-  :plant/sow-indoors  ({:start [:feb 1]
-                        :end   [:feb 30]}
-                       {:start [:jun 1]
+                       {:start [:may 1]
                         :end   [:jul 30]}),
-  :plant/sow-outdoors ({:start [:mar 1]
-                        :end   [:mar 30]}
-                       {:start [:jul 1]
-                        :end   [:aug 30]}),
-  :plant/transplant   ({:start [:mar 1]
-                        :end   [:mar 30]}
-                       {:start [:jul 1]
-                        :end   [:aug 30]})}
- {:plant/name       "Strawberry",
-  :plant/genus      :fragaria
-  :plant/specis     :ananassa
-  :plant/type       :vegetable,
-  :plant/transplant ({:start [:jan 1]
-                      :end   [:jan 30]}
-                     {:start [:sept 15]
-                      :end   [:dec 30]})}
- {:plant/name       "Thyme",
-  :plant/type       :herb,
-  :plant/transplant ({:start [:feb 1]
-                      :end   [:apr 30]}
-                     {:start [:oct 1]
-                      :end   [:nov 30]})}
- {:plant/name            "Tomatoes",
-  :plant/scientific-name "Solanum lycopersicum"
-  :plant/type            :vegetable,
-  :plant/harvest-days    [60 100]
-  :plant/sow-indoors     ({:start [:jan 1]
-                           :end   [:jan 30]}
-                          {:start [:may 1]
-                           :end   [:jul 30]}
-                          {:start [:dec 1]
-                           :end   [:dec 30]}),
-  :plant/transplant      ({:start [:feb 15]
-                           :end   [:mar 30]}
-                          {:start [:jul 15]
-                           :end   [:sept 30]})}
- {:plant/name         "Watermelon",
-  :plant/type         :vegetable,
-  :plant/sow-outdoors ({:start [:feb 15]
-                        :end   [:mar 30]})}]
+   :plant/transplant  ({:start [:mar 1]
+                        :end   [:apr 30]}
+                       {:start [:jul 15]
+                        :end   [:sept 30]})}
+  {:plant/name         "Garlic",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:oct 15]
+                         :end   [:dec 15]})}
+  {:plant/name       "Grapes",
+   :plant/type       :vegetable,
+   :plant/transplant ({:start [:feb 15]
+                       :end   [:mar 30]}
+                      {:start [:oct 1]
+                       :end   [:oct 30]})}
+  {:plant/name         "Green Onion",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:apr 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name         "Jicama",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:feb 30]}),
+   :plant/sow-outdoors ({:start [:mar 1]
+                         :end   [:apr 30]}),
+   :plant/transplant   ({:start [:mar 1]
+                         :end   [:apr 30]})}
+  {:plant/name         "Kale",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:sept 15]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name       "Lavender",
+   :plant/type       :herb,
+   :plant/transplant ({:start [:jan 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:dec 30]})}
+  {:plant/name       "Lemon Grass",
+   :plant/type       :herb,
+   :plant/transplant ({:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]})}
+  {:plant/name         "Lettuce",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:sept 15]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+
+  {:plant/name         "Luffa",
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:apr 30]}),
+   :plant/sow-outdoors ({:start [:feb 15]
+                         :end   [:apr 30]}),
+   :plant/transplant   ({:start [:feb 15]
+                         :end   [:apr 30]})}
+  {:plant/name         "Okra",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:feb 1]
+                         :end   [:may 30]}),
+   :plant/sow-outdoors ({:start [:mar 15]
+                         :end   [:may 30]}),
+   :plant/transplant   ({:start [:mar 15]
+                         :end   [:may 30]})}
+  {:plant/name         "Onion (Bulb)",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:aug 1]
+                         :end   [:nov 30]}),
+   :plant/sow-outdoors ({:start [:oct 1]
+                         :end   [:nov 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:nov 1]
+                         :end   [:dec 30]})}
+  {:plant/name         "Peas",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name        "Peppers",
+   :plant/type        :vegetable,
+   :plant/sow-indoors ({:start [:jan 1]
+                        :end   [:feb 30]}
+                       {:start [:may 1]
+                        :end   [:jul 30]}),
+   :plant/transplant  ({:start [:feb 15]
+                        :end   [:apr 30]}
+                       {:start [:jul 15]
+                        :end   [:sept 30]})}
+
+  {:plant/name         "Saffron Crocus",
+   :plant/type         :herb,
+   :plant/sow-outdoors ({:start [:sept 15]
+                         :end   [:oct 30]})}
+  {:plant/name       "Sage",
+   :plant/type       :herb,
+   :plant/transplant ({:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]})}
+  {:plant/name         "Spinach",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:aug 1]
+                         :end   [:dec 30]}),
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]}),
+   :plant/transplant   ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:dec 30]})}
+  {:plant/name         "Squash (Summer)",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:jul 1]
+                         :end   [:aug 30]}),
+   :plant/sow-outdoors ({:start [:feb 15]
+                         :end   [:mar 30]}
+                        {:start [:aug 15]
+                         :end   [:sept 30]}),
+   :plant/transplant   ({:start [:feb 15]
+                         :end   [:mar 30]}
+                        {:start [:aug 15]
+                         :end   [:sept 30]})}
+  {:plant/name         "Squash (Winter)",
+   :plant/type         :vegetable,
+   :plant/sow-indoors  ({:start [:feb 1]
+                         :end   [:feb 30]}
+                        {:start [:jun 1]
+                         :end   [:jul 30]}),
+   :plant/sow-outdoors ({:start [:mar 1]
+                         :end   [:mar 30]}
+                        {:start [:jul 1]
+                         :end   [:aug 30]}),
+   :plant/transplant   ({:start [:mar 1]
+                         :end   [:mar 30]}
+                        {:start [:jul 1]
+                         :end   [:aug 30]})}
+  {:plant/name       "Strawberry",
+   :plant/genus      :fragaria
+   :plant/specis     :ananassa
+   :plant/type       :vegetable,
+   :plant/transplant ({:start [:jan 1]
+                       :end   [:jan 30]}
+                      {:start [:sept 15]
+                       :end   [:dec 30]})}
+  {:plant/name       "Thyme",
+   :plant/type       :herb,
+   :plant/transplant ({:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]})}
+  {:plant/name            "Tomatoes",
+   :plant/scientific-name "Solanum lycopersicum"
+   :plant/type            :vegetable,
+   :plant/harvest-days    [60 100]
+   :plant/sow-indoors     ({:start [:jan 1]
+                            :end   [:jan 30]}
+                           {:start [:may 1]
+                            :end   [:jul 30]}
+                           {:start [:dec 1]
+                            :end   [:dec 30]}),
+   :plant/transplant      ({:start [:feb 15]
+                            :end   [:mar 30]}
+                           {:start [:jul 15]
+                            :end   [:sept 30]})}
+  {:plant/name         "Watermelon",
+   :plant/type         :vegetable,
+   :plant/sow-outdoors ({:start [:feb 15]
+                         :end   [:mar 30]})}]}
