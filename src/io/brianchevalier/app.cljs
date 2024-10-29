@@ -4,11 +4,12 @@
    [clojure.set :as set]
    [clojure.spec.alpha :as spec]
    [clojure.string :as str]
-   [io.brianchevalier.schema]
-   [shadow.resource :as shadow.resource]
-   [io.brianchevalier.components :as components]
    [io.brianchevalier.calendar :as calendar]
+   [io.brianchevalier.components :as components]
+   [io.brianchevalier.plant-detail :as plant-detail]
+   [io.brianchevalier.schema]
    [io.brianchevalier.time :as time]
+   [shadow.resource :as shadow.resource]
    [uix.core :as uix :refer [defui $]]))
 
 (defn get-data []
@@ -34,8 +35,10 @@
 
 (defn query
   [{plants :plant/plants}
-   {:keys [search plant-type times]}]
+   {:keys [search plant-type times selected-plant]}]
   (cond->> plants
+    selected-plant
+    (filter (fn [plant] (= plant selected-plant)))
 
     (not (str/blank? search))
     (filter (fn [{name :plant/name}]
@@ -45,9 +48,9 @@
     (seq plant-type)
     (filter (fn [{type :plant/type}]
               (contains? plant-type type)))
-    
+
     (contains? times :current)
-    (filter-by-date )
+    (filter-by-date)
 
     :always (sort-by :plant/name)))
 
@@ -79,9 +82,10 @@
 (defui app
   []
   (let [db                (get-data)
-        [value on-change] (uix/use-state {:search ""
-                                          :plant-type #{}
-                                          :times #{:current}})
+        [value on-change] (uix/use-state {:search         ""
+                                          :plant-type     #{}
+                                          :times          #{:current}
+                                          :selected-plant nil})
         [page on-navigate] (uix/use-state #{:calendar})
         plants            (query db value)]
     ($ :div.bg-slate-700.text-stone-100.h-screen
@@ -93,7 +97,6 @@
 
         :else
         ($ :div.flex.flex-col.gap-10.p-5
-          
           (contains? page :calendar)
           ($ :div.flex.flex-col.md:flex-row.gap-5
             ($ components/search {:value     (:search value)
@@ -102,6 +105,9 @@
                                       :on-change (fn [v] (on-change (assoc value :plant-type v)))})
             ($ components/time-span {:value     (:times value)
                                      :on-change (fn [v] (on-change (assoc value :times v)))}))
-          ($ calendar/calendar {:plants  plants
-                                :genuses (:genuses db)}))
+          ($ calendar/calendar {:on-select (fn [plant]
+                                             (on-change (assoc value :selected-plant (when (not= plant (:selected-plant value)) plant))))
+                                :plants plants
+                                :genuses (:genuses db)})
+          ($ plant-detail/Detail {:plant (:selected-plant value)}))
         ))))

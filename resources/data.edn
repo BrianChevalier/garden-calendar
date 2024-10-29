@@ -86,6 +86,14 @@
                  :plant/type         :flower
                  :plant/genus        :antirrhinum 
                  :plant/species      :majus
+                 :plant/germination  {:temp     {:min 70
+                                                 :max 75}
+                                      :depth    {:min 0.25}
+                                      :duration {:min 7
+                                                 :max 14}
+                                      :spacing  {:min 6
+                                                 :max 12}}
+                 :plant/photos [{:url "https://upload.wikimedia.org/wikipedia/commons/6/66/Antirrhinum_majus_from_Thasos.JPG"}]
                  :plant/sow-outdoors [{:start [:jan 1]
                                        :end   [:feb 15]}
                                       {:start [:sept 15]
@@ -191,7 +199,15 @@
                  :plant/transplant   ({:start [:feb 1]
                                        :end   [:may 30]})}
                 {:plant/name         "Artichokes (Globe)",
-                 :plant/type         :vegetable,
+                 :plant/type         :vegetable
+                 :plant/germination  {:temp     {:min 60
+                                                 :max 80}
+                                      :depth    {:min 0.25}
+                                      :duration {:min 10
+                                                 :max 21}
+                                      :spacing  {:min 24
+                                                 :max 48}}
+                 :plant/photos       [{:url "https://upload.wikimedia.org/wikipedia/commons/6/6d/Artichoke_J1.jpg"}]
                  :plant/sow-indoors  ({:start [:aug 1]
                                        :end   [:dec 30]}),
                  :plant/sow-outdoors ({:start [:oct 1]

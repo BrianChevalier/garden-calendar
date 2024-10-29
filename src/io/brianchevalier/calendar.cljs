@@ -37,11 +37,13 @@
                  (some-> plant :plant/species name)])))
 
 (defui table-row
-  [{:keys [i plant genuses]}]
+  [{:keys [i plant genuses on-select]}]
   (let [row  (inc (inc i))
         name (:plant/name plant)]
     ($ :<>
-      ($ :div {:class (str "col-start-1 row-start-" row)}
+      ($ :div 
+        {:class (str "col-start-1 row-start-" row)
+         :on-click (fn [_e] (on-select plant))}
         (when (contains? genuses (:plant/genus plant))
           "***")
         ($ :div.flex.flex-col
@@ -54,12 +56,13 @@
                     :classes (k->classes k)
                     :periods (get plant k)})))))
 
-(defui table-rows [{:keys [plants genuses]}]
+(defui table-rows [{:keys [plants genuses on-select]}]
   (map-indexed (fn [i p]
-                 ($ table-row {:i     i
-                               :key   i
-                               :plant p
-                               :genuses genuses}))
+                 ($ table-row {:i         i
+                               :key       i
+                               :plant     p
+                               :on-select on-select
+                               :genuses   genuses}))
                plants))
 
 (defui table-header []
@@ -168,7 +171,7 @@
                 :on-cell-change on-cell-change}))))
 
 (defui calendar
-  [{:keys [plants genuses]}]
+  [{:keys [plants genuses on-select]}]
   (let [n-rows (count plants)]
     ($ :div.overflow-scroll
       ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
@@ -178,4 +181,6 @@
         ($ gridlines {:n-rows n-rows})
         ($ current-day {:n-rows n-rows})
         ($ table-header)
-        ($ table-rows {:plants plants :genuses genuses})))))
+        ($ table-rows {:on-select on-select
+                       :plants    plants
+                       :genuses   genuses})))))
