@@ -13,7 +13,10 @@
    [uix.core :as uix :refer [defui $]]))
 
 (defn get-data []
-  (let [data (edn/read-string (shadow.resource/inline "../../../resources/data.edn"))]
+  (let [base (edn/read-string (shadow.resource/inline "../../../resources/data.edn"))
+        flowers (edn/read-string (shadow.resource/inline "../../../resources/flowers.edn"))
+        vegetables (shadow.resource/inline "../../../resources/vegetables.edn")
+        data (merge base {:plant/plants (concat flowers vegetables)})]
     (when-not (spec/valid? :plant/db data)
       (throw (ex-info "Schema error" {:data (spec/explain-data :plant/db data)})))
     data))
