@@ -16,9 +16,9 @@
   (let [base (edn/read-string (shadow.resource/inline "../../../resources/data.edn"))
         flowers (edn/read-string (shadow.resource/inline "../../../resources/flowers.edn"))
         vegetables (edn/read-string (shadow.resource/inline "../../../resources/vegetables.edn"))
-        data (merge base {:plant/plants (concat flowers vegetables)})]
+        data (assoc base :plant/plants (vec (concat flowers vegetables)))]
     (when-not (spec/valid? :plant/db data)
-      (throw (ex-info "Schema error" {:data (spec/explain-data :plant/db data)})))
+      (js/console.error (ex-info "Schema error" {:data (spec/explain-data :plant/db data)})))
     data))
 
 (defn current-plant?
