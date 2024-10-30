@@ -27,8 +27,9 @@
 
 (def k->classes
   {:plant/sow-indoors  [:bg-blue-500 ]
-   :plant/sow-outdoors [:bg-green-500 :mt-3 ]
-   :plant/transplant   [:bg-orange-500 :mt-6 ]})
+   :plant/sow-outdoors [:bg-green-500 :mt-2 ]
+   :plant/transplant   [:bg-orange-500 :mt-4 ]
+   :plant/flowering    [:bg-purple-500 :mt-6 ]})
 
 (defn scientific-name [plant]
   (or (:plant/scientific-name plant)

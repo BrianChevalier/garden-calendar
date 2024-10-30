@@ -1,17 +1,32 @@
 {:plant/plants
  [
-  {:plant/name            "Linaria",
-   :plant/scientific-name "Linaria maroccana",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:sept 15]
-                            :end   [:nov 15]})}
-  {:plant/name            "Nasturtium",
-   :plant/scientific-name "Tropaeolum majus",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:jan 1]
-                            :end   [:jan 30]}
-                           {:start [:oct 1]
-                            :end   [:dec 30]})}
+  {:plant/name         "Linaria",
+   :plant/genus        :linaria
+   :plant/species      :maroccana
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:sept 15]
+                         :end   [:nov 15]})
+   :plant/flowering    [{:start [:mar 1]
+                         :end   [:apr 30]}]}
+  {:plant/name         "Larkspur"
+   :plant/genus        :consolida 
+   :plant/species      :ambigua
+   :plant/sow-outdoors [{:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:sept 15]
+                         :end   [:nov 15]}]
+   :plant/flowering    [{:start [:mar 1]
+                         :end   [:may 30]}]}
+  {:plant/name         "Nasturtium",
+   :plant/genus        :tropaeolum
+   :plant/species      :majus
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:jan 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})
+   :plant/flowering    [{:start [:feb 1]
+                         :end   [:may 30]}]}
   {:plant/name         "Roselle Hibiscus",
    :plant/type         :flower,
    :plant/sow-indoors  ({:start [:feb 1]
@@ -25,31 +40,51 @@
    :plant/species      :annus
    :plant/type         :flower,
    :plant/sow-outdoors ({:start [:feb 1]
-                         :end   [:jul 30]})}
-  {:plant/name            "Sweet Alyssum",
-   :plant/scientific-name "Lobularia maritima",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:jan 1]
-                            :end   [:mar 30]}
-                           {:start [:oct 1]
-                            :end   [:dec 30]})}
-  {:plant/name            "Sweet Peas",
-   :plant/scientific-name "Lathyrus odoratus",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:jan 1]
-                            :end   [:feb 30]}
-                           {:start [:oct 1]
-                            :end   [:dec 30]})}
+                         :end   [:jul 30]})
+   :plant/flowering    [{:start [:may 1]
+                         :end   [:oct 30]}]}
+  {:plant/name         "Mexican Sunflower"
+   :plant/genus        :tithonia
+   :plant/species      :rotundifolia
+   :plant/sow-outdoors [{:start [:feb 1]
+                         :end   [:may 15]}]
+   :plant/flowering    [{:start [:jul 1]
+                         :end   [:dec 15]}]}
+  {:plant/name         "Sweet Alyssum",
+   :plant/genus        :lobularia 
+   :plant/species      :maritima
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:mar 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})
+   :plant/flowering    [{:start [:jan 1]
+                         :end   [:may 15]}
+                        {:start [:oct 15]
+                         :end   [:dec 15]}]}
+  {:plant/name         "Sweet Peas"
+   :plant/genus        :lathyrus
+   :plant/species      :odoratus
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:jan 1]
+                         :end   [:feb 30]}
+                        {:start [:oct 1]
+                         :end   [:dec 30]})
+   :plant/flowering    [{:start [:feb 1]
+                         :end   [:may 1]}]}
   {:plant/name "Desert Bluebell",
    :plant/genus :phacelia
    :plant/type :flower}
-  {:plant/name            "Hollyhock",
-   :plant/scientific-name "Alcea rosea",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:feb 1]
-                            :end   [:mar 30]}
-                           {:start [:oct 1]
-                            :end   [:nov 30]})}
+  {:plant/name         "Hollyhock",
+   :plant/genus        :alcea
+   :plant/species      :rosea
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:feb 1]
+                         :end   [:mar 30]}
+                        {:start [:oct 1]
+                         :end   [:nov 30]})
+   :plant/flowering    [{:start [:apr 1]
+                         :end   [:jun 30]}]}
   {:plant/name         "Desert Marigolds",
    :plant/genus        :baileya
    :plant/species      :multiradiata
@@ -57,7 +92,9 @@
    :plant/sow-outdoors ({:start [:feb 15]
                          :end   [:apr 15]}
                         {:start [:oct 1]
-                         :end   [:nov 30]})}
+                         :end   [:nov 30]})
+   :plant/flowering    [{:start [:apr 15]
+                         :end   [:sept 30]}]}
   {:plant/name        "Chamomile",
    :plant/type        :flower,
    :plant/sow-indoors ({:start [:jan 1]
@@ -68,33 +105,48 @@
                         :end   [:mar 30]}
                        {:start [:oct 1]
                         :end   [:dec 30]})}
-  {:plant/name            "Calendula",
-   :plant/scientific-name "Calendula officinalis",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:sept 15]
-                            :end   [:nov 30]})}
-  {:plant/name            "Bells of Ireland",
-   :plant/scientific-name "Moluccella laevis",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:sept 15]
-                            :end   [:nov 30]})}
-  {:plant/name            "Bachelor’s Button",
-   :plant/scientific-name "Centaurea cyanus",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:sept 15]
-                            :end   [:nov 30]})}
+  {:plant/name         "Calendula",
+   :plant/genus        :calendula
+   :plant/species      :officinalis
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:sept 15]
+                         :end   [:nov 30]})
+   :plant/flowering    [{:start [:jan 1]
+                         :end   [:may 30]}
+                        {:start [:dec 1]
+                         :end   [:dec 30]}]}
+  {:plant/name         "Bells of Ireland",
+   :plant/genus        :moluccella
+   :plant/species      :laevis
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:sept 1]
+                         :end   [:nov 30]})
+   :plant/flowering    [{:start [:mar 1]
+                         :end   [:jun 30]}]}
+  {:plant/name         "Bachelor’s Button"
+   :plant/genus        :centaurea
+   :plant/species      :cyanus
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:sept 15]
+                         :end   [:nov 30]})
+   :plant/flowering    [{:start [:feb 1]
+                         :end   [:jun 30]}]}
   {:plant/name            "Yarrow",
    :plant/scientific-name "Achillea spp.",
    :plant/type            :flower,
    :plant/sow-outdoors    ({:start [:feb 1]
                             :end   [:mar 30]}
                            {:start [:oct 1]
-                            :end   [:nov 30]})}
-  {:plant/name            "Zinnia",
-   :plant/scientific-name "Zinnia elegans",
-   :plant/type            :flower,
-   :plant/sow-outdoors    ({:start [:mar 1]
-                            :end   [:jun 30]})}
+                            :end   [:nov 30]})
+   :plant/flowering [{:start [:may 1] :end [:aug 30]}]}
+  {:plant/name         "Zinnia",
+   :plant/genus        :zinnia
+   :plant/species      :elegans
+   :plant/type         :flower,
+   :plant/sow-outdoors ({:start [:mar 1]
+                         :end   [:jun 30]})
+   :plant/flowering    [{:start [:apr 1]
+                         :end   [:nov 30]}]}
   {:plant/name            "Borage"
    :plant/scientific-name "Borago officinalis"
    :plant/type            :flower
@@ -103,20 +155,28 @@
                            {:start [:oct 1]
                             :end   [:dec 30]}]}
   {:plant/name         "Echinacea"
+   :plant/genus        :echinacea
+   :plant/species      :purpurea
    :plant/type         :flower
    :plant/sow-outdoors [{:start [:oct 1]
-                         :end   [:nov 15]}]}
+                         :end   [:nov 15]}]
+   :plant/flowering    [{:start [:apr 1]
+                         :end [:jun 30]}]}
   {:plant/name         "Snapdragon"
    :plant/type         :flower
    :plant/genus        :antirrhinum
    :plant/species      :majus
-   :plant/germination  {:temp {:min 70
-                               :max 75}
-                        :depth {:min 0.25}
+   :plant/germination  {:temp     {:min 70
+                                   :max 75}
+                        :depth    {:min 0.25}
                         :duration {:min 7
                                    :max 14}
-                        :spacing {:min 6
-                                  :max 12}}
+                        :spacing  {:min 6
+                                   :max 12}}
+   :plant/flowering    [{:start [:oct 15]
+                         :end   [:dec 30]}
+                        {:start [:jan 1]
+                         :end   [:may 15]}]
    :plant/photos       [{:url "https://upload.wikimedia.org/wikipedia/commons/6/66/Antirrhinum_majus_from_Thasos.JPG"}]
    :plant/sow-outdoors [{:start [:jan 1]
                          :end   [:feb 15]}
