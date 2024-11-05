@@ -35,6 +35,27 @@
                          :end   [:may 30]}),
    :plant/transplant   ({:start [:mar 15]
                          :end   [:may 30]})}
+  {:plant/name        "Butterfly Pea Flower"
+   :plant/genus       :clitoria
+   :plant/species     :ternatea
+   :plant/sow-indoors [{:start [:jan 1]
+                        :end   [:feb 30]}]
+   :plant/transplant  [{:start [:mar 1]
+                        :end   [:apr 30]}]}
+  {:plant/name       "Oregano"
+   :plant/genus      :origanum
+   :plant/species    :vulgare
+   :plant/transplant [{:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]}]}
+  {:plant/name       "Sage"
+   :plant/genus      :salvia 
+   :plant/species    :officinalis
+   :plant/transplant [{:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]}]}
   {:plant/name         "Sunflower",
    :plant/genus        :helianthus
    :plant/species      :annus

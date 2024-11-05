@@ -15,6 +15,12 @@
                             :end   [:dec 30]}]
    :plant/sow-indoors     [{:start [:sept 1]
                             :end   [:dec 30]}]}
+  {:plant/name        "Cumin"
+   :plant/type        :herb
+   :plant/genus       :cuminum 
+   :plant/species     :cyminum
+   :plant/sow-indoors [{:start [:feb 1]
+                        :end   [:mar 30]}]}
   {:plant/name       "Garlic Chives"
    :plant/type       :vegetable
    :plant/genus      :allium
@@ -83,6 +89,16 @@
                          :end   [:feb 30]}]
    :plant/sow-outdoors [{:start [:mar 1]
                          :end   [:mar 30]}]}
+  {:plant/name         "Papalo"
+   :plant/genus        :yerba 
+   :plant/species      :porosa
+   :plant/type         :herb
+   :plant/sow-indoors  [{:start [:jan 1]
+                         :end   [:feb 30]}]
+   :plant/transplant   [{:start [:mar 1]
+                         :end   [:apr 30]}]
+   :plant/sow-outdoors [{:start [:mar 1]
+                         :end   [:apr 30]}]}
   {:plant/name         "Buckwheat"
    :plant/sow-outdoors [{:start [:mar 1]
                          :end   [:oct 30]}]}
@@ -312,6 +328,27 @@
                        :end   [:apr 30]}
                       {:start [:oct 1]
                        :end   [:nov 30]})}
+  {:plant/name       "Lemon Balm"
+   :plant/type       :herb
+   :plant/genus      :melissa 
+   :plant/species    :officinalis
+   :plant/transplant [{:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end [:nov 30]}]}
+  {:plant/name       "Marjoram"
+   :plant/genus      :origanum
+   :plant/species    :majorana
+   :plant/transplant [{:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]}]}
+  {:plant/name       "Mint"
+   :plant/genus      :mentha
+   :plant/transplant [{:start [:feb 1]
+                       :end   [:apr 30]}
+                      {:start [:oct 1]
+                       :end   [:nov 30]}]}
   {:plant/name         "Lettuce",
    :plant/type         :vegetable,
    :plant/sow-indoors  ({:start [:jan 1]

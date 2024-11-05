@@ -31,6 +31,19 @@
    :plant/transplant   [:bg-orange-500 :mt-4 ]
    :plant/flowering    [:bg-purple-500 :mt-6 ]})
 
+(def k->label
+  {:plant/sow-indoors  "Indoor"
+   :plant/sow-outdoors "Outdoor"
+   :plant/transplant   "Transplant"
+   :plant/flowering    "Flower"})
+
+(defui legend []
+  ($ :div.flex.flex-row.gap-2.justify-end.m-3
+    (for [[k [color & _]] k->classes]
+      ($ components/div {:key     k
+                         :classes [color :rounded-md :px-2 :opacity-70 ]} 
+        (k->label k)))))
+
 (defn scientific-name [plant]
   (or (:plant/scientific-name plant)
       (str/join " " 
@@ -175,6 +188,7 @@
   [{:keys [plants genuses on-select]}]
   (let [n-rows (count plants)]
     ($ :div.overflow-scroll
+      ($ legend)
       ($ :div.grid.grid-cols-25.grid-rows-25.grid-flow-row.gap-y-5.min-w-160
         ($ frost-lines {:n-rows n-rows})
         ($ contextual-data {:n-rows n-rows
